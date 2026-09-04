@@ -1,0 +1,17 @@
+1. mkdir (foldername) ==> ex. mkdir folder1 ( this command creates a folder named folder1)
+2. type nul > (filename) ==> ex. type nul > file1.txt ( this command creates a file named file1.txt)
+3. cd .. ==> go back to one folder.
+cd (folder name) ==> ex. cd folder2 ( this enters to the folder2 ) to enter the folder.
+dir ==> see files/folders.
+cls ==> clear the cmd.
+code . ==> redirects us from the cmd to vs code app directly where the project is running.
+
+a real life example for the complete process be like:
+>>> mkdir madvisions
+>>> cd madvisions
+>>> mkdir frontend 
+>>> mkdir server
+>>> images
+>>> cd frontend
+>>> type nul > index.js 
+>>> code . 
