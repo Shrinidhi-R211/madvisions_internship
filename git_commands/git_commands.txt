@@ -1,0 +1,48 @@
+1. git --version ( to get the details regarding the version of the git and to even check if the git is installed in the local system or not).
+
+2. git init - (Initialize => telling git to start working inside this folder from now on).
+
+3. ls => toview files in the folder.
+
+4. ls -la => toview files along with the hidden files.
+
+5. git clone URL => we need to specify the URL of the github repo to clone it into the local device.
+
+6. git status => To check over the changes / modifications made.
+
+7. git add --all / git --A => This command allows us to add all the files regardless of the creation tracking, to the staging.
+
+8. git reset => To remove everything from the staging step and return to the working directory.
+
+9. git add . => Stages  the changes only within the current directory we're in and the sub folders inside the current directory, but not the parent folder of the current directory unlike git add --all / git add --A.
+
+10. git add * => Only stages the new or modified files and not the deleted ones.
+
+11. git commit -m "MESSAGE" => To commit the files staged with the custom message for the user's referal. 
+
+12. git reset HEAD~ => Undo the last commit and get everything back to the working directory.
+
+13. git rm "FILENAME" => To automatically delete and stage changes.
+    --> If we don't use this then the manual method would be : 
+        step 1 : Deleting a file manually from the file explorer.
+        step 2 : Then git add . to  manually stage the change, that is a deleted file. 
+
+    --> so to overcome this two step process, we use git rm "FILENAME" command, this helps us to perform deletion and staging the changes by a single line of command.
+
+    --> This command is used only after the commit, i.e, Changes  to be made after the commit.
+
+14. git reset --hard =>Both changes and the deleted file return to their previous  state.
+    --> This is the negation for manually deleted files, because "git reset" only brings back staged files.
+
+15. git rm --cached "FILENAME" => This command removes the file from the staging , but keeps it physically in the working directory.
+
+16. git log => To check the history id the commits.
+    --> This is useful when we have to go back to the previous versions of the code.
+
+17. git log --oneline => This gives the shorthand values for the version, i.e, commit ids.
+
+18. git branch => To view the list of all branches.
+
+19.git switch "BRANCHNAME" / git checkout "BRANCHNAME" => To switch or move ti that specified branch.
+
+20. git switch -c "BRANCHNAME" => Shorthand to perform both creation and and switching for branches.
