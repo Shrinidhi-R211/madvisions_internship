@@ -1,0 +1,78 @@
+header {
+    background-color: aqua;
+    border: 3px;
+    border-color: brown;
+    border-style:solid;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px;
+}
+
+.heading {
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 30px;
+font-weight: normal;
+font-style: italic;
+background-color: blueviolet;
+border: 5px;
+padding: 15px 15px 15px 15px;
+border-color: black;
+border-style: dotted;
+}
+nav {
+display: flex;
+align-items: center;
+justify-content: space-around;
+border-style: dashed;
+border-color: black;
+border-width: 3px;
+width: 55%;
+} 
+
+.profile-section{
+    margin-left: 12.5%;
+    width: 75%;
+    height: 350px;
+    border: 5px solid aquamarine;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+.profile-section-1{
+    width: 40%;
+    height: 350px;
+    border: 5px solid aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.profile-section-2{
+    width: 60%;
+    height: 350px;
+    border: 5px solid aquamarine;
+    display: flex;
+    justify-content: start;
+    align-items: center; 
+}
+.profile-pic-img{
+    width: 150px;
+    height: 170px;
+    border-radius: 50%;
+}
+
+#home{
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.abt-heading{
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: large;
+    text-align: center;
+    color: red;
+}
