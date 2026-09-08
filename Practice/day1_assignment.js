@@ -17,11 +17,11 @@ for(let a =0; a < array.length; a++){
    
 
 // now to reverse the entire resultant array we have to just apply a new logic using for loop.
-
-let reversedArray = [];
-for(let a2 = x.length ; a2>0; a2--){
-    console.log(a2);
-}
+// the below code is not yet working, still need to understand it thoroughly to master it.
+// let reversedArray = [];
+// for(let a2 = x.length ; a2>0; a2--){
+//     console.log(a2);
+// }
 
 
 
