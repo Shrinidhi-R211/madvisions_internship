@@ -1,0 +1,41 @@
+.input-Task {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  background-color: rgb(51, 113, 167);
+}
+.todo-Container {
+  background-color: chartreuse;
+    width: 95%;
+    margin: auto;
+}
+.input-Task-Field{
+background-color: aliceblue;
+width: 350px;
+color: black;
+border-radius: 10px;
+border: solid 1px aliceblue;
+}
+.btn-Add{
+  width: 90px;
+  color: black;
+  background-color: bisque;
+}
+.my-Tasks-Div{
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  align-items: center;
+}
+.my-Tasks-Div2{
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 70%;
+  margin: 20px;
+  border: solid 2px black;
+}
+.btn-Delete{
+  height: 30px;
+}
