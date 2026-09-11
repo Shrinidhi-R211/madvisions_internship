@@ -69,6 +69,13 @@
 
 // console.log(" ");
 
+
+
+
+
+
+// // 2. Spread operator (...)
+
 // console.log("2. Spread operator. (...)");
 
 // const numbers1 = [10, 20, 30];
