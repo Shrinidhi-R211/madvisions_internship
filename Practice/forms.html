@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS HTML</title>
+</head>
+<body>
+    <div>
+        <form action="index.html" method="post" enctype="multipart/form-data">
+            <label for="username">Please Enter Username : </label>
+            <input type="text" id="username" required minlength="2" maxlength="50" placeholder="ex: John Doe">
+            <br>
+
+            <label for="password">Password <sup>*</sup> : </label>
+            <input type="password" id="password" placeholder="password" minlength="8" maxlength="15" pattern="^[a-z](?=.*\d)(?=.*[A-Za-z0-9@_#$-!]).{7,14}$" required>
+            <br>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" minlength="10" maxlength="40" placeholder="someone@gmail.com" required>
+            <br>
+
+            <label for="file">Input image file</label>
+            <input type="file" id="file" accept="image/png, image/jpeg">
+            <br>
+
+            <label for="phone">Phone : </label>
+            <input type="tel" id="phone" placeholder="+91 1234567890"  minlength="13" maxlength="13"">
+            <br>
+
+            <label for="date">Date : </label>
+            <input type="date" id="date">
+            <br>
+
+            <label for="quantity">Count Quantity : </label>
+            <input type="number" id="quantity" max="100" min="0">
+            <br>
+
+            <label for="sex">Gender : </label>
+            <br>
+            <label for="male">Male</label>
+            <input type="radio" id="male" value="male" name="sex">
+            <br>
+
+            <label for="female">Female</label>
+            <input type="radio" id="female" value="female" name="sex">
+            <br>
+
+            <label for="not-disclosed">Unspecified</label>
+            <input type="radio" id="not-disclosed" value="not-disclosed" name="sex">
+            <br>
+
+            <label for="menu">Menu : </label>
+            <select id="menu">
+                <option value="sweets">Sweets</option>
+                <option value="spicy">Spicy</option>
+                <option value="starters">Starters</option>
+                <option value="desserts">Desserts</option>
+            </select>
+            <br>
+
+            <label for="checkboxelems">what would you like to order.</label> 
+            <label for="paneer">Panner</label>
+            <input type="checkbox" id="panner">
+            <label for="roti">Roti</label>
+            <input type="checkbox" id="roti">
+            <label for="rasgulla">Rasgulla</label>
+            <input type="checkbox" id="rasgulla">
+            <label for="pulav">Pulav</label>
+            <input type="checkbox" id="pulav">
+            <br>
+            <br>
+
+            <label for="feedback">Feedback please : </label>
+            <textarea name="" id="feedback" rows="5" cols="30"></textarea>
+            <br>
+
+
+            <br>
+            <input type="submit">
+            <br>
+            <input type="reset">
+
+        </form>
+    </div>
+</body>
+</html>
