@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists Concepts In HTML</title>
+</head>
+<body>
+    <div>
+        <section>
+            <h1>Creating lists using HTML.</h1>
+        </section>
+        <hr>
+        <section>
+            <h3>Types of lists : </h3>
+            <ol type="I" start="1">
+                <li>Ordered Lists</li>
+                <li>Unordered lists</li>
+                <li>Descriptive lists</li>
+            </ol>
+        </section>
+        <hr>
+        <section>
+            <h3>This is an Example of ordered lists : </h3>
+            <p>It is used when we need the items to be maintained in an order.</p>
+            <ol type="1" start="5" reversed>
+                <li>Items 1</li> <!-- the shortcut or emmets for getting multiple list items is li{Itemname $}*Count i.e. in this case li{Item $}*4. -->
+                <li>Items 2</li>
+                <li>Items 3</li>
+                <li>Items 4</li>
+            </ol>
+        </section>
+        <hr>
+        <section>
+            <h3>This is an Example of Unordered List :</h3>
+            <p>it is used when we have no demand for the order in the list items.</p>
+            <ul style="list-style-type: square;">
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+            </ul>
+        </section>
+        <hr>
+        <section>
+            <h3>This is an Example of Descriptive List :</h3>
+            <p>It is used to describe terms and their descriptions.</p>
+            <dl>
+                <dt>HTML</dt>
+                    <dd>Hyper Text Markup Language</dd>
+                    <dd>The Structure of the webpage.</dd>
+
+                <dt>CSS</dt>
+                    <dd>Cascading Style Sheet</dd>
+                    <dd>Designing tool for the webpage</dd>
+            </dl>
+        </section>
+        <hr>
+        <section>
+            <h2>Nested Lists.</h2>
+            <p>This is used when we a deeper nest in the lists.</p>
+            <p>The nested list can be either Unordered list or Ordered list or even a Descriptive List</p>
+            <br>
+            <p>for this ex we are taking ordered list which contains unordered list.</p>
+
+            <ol>
+                <li>Nested Order List.
+                    <ol>
+                        <li>Nested Ordered list item 1</li>
+                        <li>Nested Ordered list item 2</li>
+                        <li>Nested Ordered list item 3</li>
+                    </ol>   
+                </li>
+                
+                <li>Nested Unordered List.
+                    <ul>
+                        <li>Nested Unordered list item 1</li>
+                        <li>Nested Unordered list item 2</li>
+                        <li>Nested Unordered list item 3</li>
+                    </ul>
+                </li>
+
+                <li>Nested Descriptive List.
+                    <dl>
+                        <dt>Ordered list</dt>
+                            <dd>When the order matters.</dd>
+
+                        <dt>Unordered list</dt>
+                            <dd>When the order doesn't matter.</dd>
+
+                        <dt>Descriptive list</dt>
+                            <dd>When the list has Terms and their Descriptions.</dd>
+                    </dl>
+                </li>
+            </ol>
+        </section>
+    </div>
+</body>
+</html>
