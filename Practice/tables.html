@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables in HTML.</title>
+</head>
+<body>
+    <div>
+        <h1>Tables and its Attributes.</h1>
+    </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Heading 1</th>
+                    <th>Heading 2</th>
+                    <th>Heading 3</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Table data1 for Heading 1</td>
+                    <td>Table data1 for Heading 2</td>
+                    <td>Table data1 for Heading 3</td>
+                </tr>
+
+                <tr>
+                    <td>Table data2 for Heading 1</td>
+                    <td>Table data2 for Heading 2</td>
+                    <td>Table data2 for Heading 3</td>
+                </tr>
+
+                <tr>
+                    <td>Table data3 for Heading 1</td>
+                    <td>Table data3 for Heading 2</td>
+                    <td>Table data3 for Heading 3</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>Footer Heading</th>
+                    <td>Fotter Data</td>
+                </tr>
+            </tfoot>           
+        </table>
+    </div>
+
+    <div>
+        <h1>2nd Table for extra properties and attributes (rowspan, colspan, and caption).</h1>
+
+        <table>
+            <caption>
+                Understan new props and attributes.
+            </caption>
+
+            <thead>
+                <tr>
+                    <th colspan="3">Student Details</th>
+                </tr>
+                <tr>
+                    <th>student name</th>
+                    <th>Subjects</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3">Shri</td>
+                    <td>HTML</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                </tr>
+                <tr>
+                    <td>JS</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
