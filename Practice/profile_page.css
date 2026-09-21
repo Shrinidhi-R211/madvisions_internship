@@ -1,0 +1,501 @@
+
+/* =========================================
+   BASIC PAGE STYLING
+   ========================================= */
+
+/* 
+   The * selector selects every element on the page.
+
+   box-sizing: border-box means:
+   When we give an element a width, its padding
+   and border are included inside that width.
+
+   This makes the box model easier to understand
+   and prevents unexpected extra width.
+*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+/*
+   The header contains TWO section elements:
+
+   <section>  -> profile image
+   <section>  -> introduction
+
+   We use Flexbox on the parent (header)
+   to control how its children are arranged.
+*/
+header {
+    display: flex;
+
+    /*
+       The two section children will be placed
+       next to each other horizontally.
+
+       Default flex-direction is row.
+    */
+    flex-direction: row;
+
+    /*
+       Adds space between the two sections.
+
+       The first section stays toward the left
+       and the second section moves toward the right.
+    */
+    justify-content: space-around;
+
+    /*
+       Aligns the children vertically in the center.
+    */
+    align-items: center;
+
+    background-color: #222;
+    color: white;
+
+    padding: 30px;
+}
+
+
+/* Profile picture section */
+header section:first-child {
+    text-align: center;
+}
+
+
+/*
+   Styling the image inside the first section.
+
+   width controls the size of the image.
+   border-radius: 50% turns the square image
+   into a circle.
+*/
+header img {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+
+/* Introduction section */
+header section:last-child {
+    text-align: center;
+}
+
+
+/* Main heading */
+header h1 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+
+/* Subtitle */
+header h2 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+
+/* Links inside the header */
+header a {
+    color: #66ccff;
+}
+
+
+/* =========================================
+   GENERAL SECTION STYLING
+   ========================================= */
+
+/*
+   This selector selects every <section>
+   that is directly inside <body>.
+
+   These are your Passions, About Me and Skills
+   sections.
+
+   We are giving them the same basic appearance.
+*/
+body > section {
+    background-color: white;
+
+    /*
+       Padding creates space BETWEEN the content
+       and the border of the box.
+    */
+    padding: 25px;
+
+    /*
+       Margin creates space OUTSIDE the box.
+    */
+    margin: 25px auto;
+
+    /*
+       Width controls how wide the section can be.
+    */
+    width: 80%;
+
+    border: 2px solid #ddd;
+}
+
+
+/* Section headings */
+body > section h2 {
+    color: #333;
+    border-bottom: 2px solid #555;
+
+    /*
+       Padding-bottom gives some breathing room
+       between the heading and its bottom border.
+    */
+    padding-bottom: 8px;
+}
+
+
+/* =========================================
+   PASSIONS SECTION
+   ========================================= */
+
+/*
+   The div contains the two passion paragraphs.
+
+   We can use Flexbox here as well.
+
+   The div is the PARENT.
+   The two <p> elements are its CHILDREN.
+*/
+body > section:first-of-type div {
+    display: flex;
+
+    /*
+       The paragraphs are placed side-by-side.
+    */
+    justify-content: space-between;
+
+    /*
+       Gives the paragraphs some space
+       between them.
+    */
+    gap: 20px;
+}
+
+
+/*
+   Because the two <p> elements are flex children,
+   each one can take roughly half of the available
+   space.
+
+   flex: 1 means:
+   "Share the available space equally."
+*/
+body > section:first-of-type p {
+    flex: 1;
+
+    background-color: #eeeeee;
+    padding: 15px;
+
+    border: 1px solid #ccc;
+}
+
+
+/* =========================================
+   ABOUT ME
+   ========================================= */
+
+/*
+   We don't need Flexbox or Grid here.
+
+   The paragraph naturally takes the available
+   width of its parent.
+*/
+body > section:nth-of-type(2) p {
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SKILLS
+   ========================================= */
+
+/*
+   Here we use CSS Grid.
+
+   The <ul> is the PARENT.
+   Each <li> is a CHILD.
+
+   grid-template-columns tells the parent
+   how many columns its children should occupy.
+
+   repeat(3, 1fr) means:
+
+   3 columns
+   each taking 1 equal fraction of the space.
+*/
+body > section:nth-of-type(3) ul {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    /*
+       <ul> normally has default padding and
+       bullet points. We remove them here.
+    */
+    padding: 0;
+    list-style: none;
+}
+
+
+/* Individual skill boxes */
+body > section:nth-of-type(3) li {
+    background-color: #eeeeee;
+
+    padding: 15px;
+
+    text-align: center;
+
+    border: 2px solid #ccc;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+/*
+   The footer contains:
+
+   1. Contact Info heading
+   2. A div containing three sections
+
+   We will use Flexbox for the three
+   contact sections.
+*/
+footer {
+    background-color: #222;
+    color: white;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+
+/*
+   This div is the parent of the three
+   contact sections.
+
+   Flexbox allows us to place them
+   next to each other.
+*/
+footer > div {
+    display: flex;
+
+    justify-content: space-around;
+
+    gap: 20px;
+}
+
+
+/* Remove default list indentation */
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* Footer links */
+footer a {
+    color: #66ccff;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/*
+   This is a MEDIA QUERY.
+
+   It means:
+
+   "If the screen becomes 700px wide or smaller,
+   apply the CSS written inside these brackets."
+
+   This is one of the basic ways we make a
+   website responsive.
+
+   Desktop:
+       elements can sit beside each other.
+
+   Mobile:
+       elements should usually stack vertically
+       because there isn't enough horizontal space.
+*/
+
+
+@media (max-width: 700px) {
+
+    /* ===============================
+       HEADER ON MOBILE
+       =============================== */
+
+    /*
+       The desktop header uses row direction.
+
+       On a smaller screen we change it to column.
+
+       So the children become:
+
+       [Profile Picture]
+
+       [Introduction]
+
+       instead of:
+
+       [Profile Picture] [Introduction]
+    */
+    header {
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+
+    /*
+       Make the profile picture slightly
+       smaller on mobile.
+    */
+    header img {
+        width: 150px;
+        height: 150px;
+    }
+
+
+    header h1 {
+        font-size: 30px;
+    }
+
+
+    header h2 {
+        font-size: 18px;
+    }
+
+
+    /* ===============================
+       GENERAL SECTIONS ON MOBILE
+       =============================== */
+
+    /*
+       On desktop our sections are 80% wide.
+
+       On mobile we make them 90% wide.
+
+       Why?
+
+       Because a mobile screen is already narrow,
+       so we want to use more of the available width.
+    */
+    body > section {
+        width: 90%;
+        padding: 20px;
+    }
+
+
+    /* ===============================
+       PASSIONS ON MOBILE
+       =============================== */
+
+    /*
+       On desktop:
+
+       [ Passion 1 ] [ Passion 2 ]
+
+       On mobile:
+
+       [ Passion 1 ]
+
+       [ Passion 2 ]
+
+       Again, we change the flex direction
+       from row to column.
+    */
+    body > section:first-of-type div {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    /* ===============================
+       SKILLS ON MOBILE
+       =============================== */
+
+    /*
+       Desktop:
+
+       [HTML] [CSS] [JavaScript]
+
+       [React] [Python]
+
+       Mobile:
+
+       [HTML]
+
+       [CSS]
+
+       [JavaScript]
+
+       [React]
+
+       [Python]
+
+       We change the Grid from 3 columns
+       to 1 column.
+    */
+    body > section:nth-of-type(3) ul {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ===============================
+       FOOTER ON MOBILE
+       =============================== */
+
+    /*
+       Desktop:
+
+       [Copyright] [Trademark] [Contact]
+
+       Mobile:
+
+       [Copyright]
+
+       [Trademark]
+
+       [Contact]
+    */
+    footer > div {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+}
+
