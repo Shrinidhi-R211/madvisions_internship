@@ -7,13 +7,13 @@ function App() {
 
   const [todos, setTodos] = useState([]);
 
-  function addTodo(taskInput) {
+  function addTodo1(taskInput) {
     setTodos([...todos, taskInput]);
   }
 return (
   <div className="todo-Container">
     <h1>To Do list</h1>
-    <TodoInput addTodo={addTodo} />
+    <TodoInput addTodo={addTodo1} />
     {
     todos.map((todo) => (
       <p>{todo}</p>
