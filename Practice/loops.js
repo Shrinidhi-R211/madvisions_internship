@@ -124,12 +124,12 @@ let pwd = 12345;
 let userentry;
 
 do {
-    //userentry = Number(prompt("Enter your password : ")); // prompt() method is a browser defined method and is not supported for node.js execution, hence we have to create a new html file externally and link this js file to it, and then run the HTML file.
+    userentry = Number(prompt("Enter your password : ")); // prompt() method is a browser defined method and is not supported for node.js execution, hence we have to create a new html file externally and link this js file to it, and then run the HTML file.
     if(userentry === pwd) {
-        //console.log(" Password accepted!");
-        //console.log(" Access Granted to the Application")
+        console.log(" Password accepted!");
+        console.log(" Access Granted to the Application")
     } else {
-        //console.log("Password not Recognized");
+        console.log("Password not Recognized");
         break;
     }
 } while ( userentry !== pwd )
@@ -168,5 +168,6 @@ for(let num = 1; num <= 10; num++){
 for ( num = 1; num <= 10; num++){
     if(num === 5){
         break; // break keyword stops / breaks out of the loop once if it satisfies the condition.
-    }console.log(num);
+    }
+    //console.log(num);
 }
