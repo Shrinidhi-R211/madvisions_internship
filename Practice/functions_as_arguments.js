@@ -246,3 +246,45 @@ function isEven(number) {
 
 console.log(processNumber(25, isEven, "Even!", "Odd!"));
 console.log(processNumber(22, isEven, "Even!", "Odd!"));
+
+
+// Excercise no 12 Boss problem or just extra revision.
+const performOperation = (...args) => {
+    let operation = args.pop();
+    return operation (...args);
+} // this method is helpful if we want to take the input as normal values rather than in an array format. 
+
+const sum = (...values) => {
+    let sum = 0;
+    for (let i = 0; i < values.length; i++){
+        sum += values[i];
+    }
+    return sum;
+} // (...values) --> here the ...'s represent rest operator, unlike spread operator, it looks similar but functions differently. (NOTE : if the input is given in the array format, ... acts as spread operator, and if the input is given normally then the ... acts as rest operator.)
+
+const average = (...values) => {
+    let avg = sum(...values) / values.length;
+    return avg;
+}
+
+const maxinum = (...numbers) => {
+    let maxnum = numbers[0];
+    for( let i = 0; i < numbers.length; i++){
+        if(numbers[i] > maxnum ){
+            maxnum = numbers[i];
+        }
+    }
+    return maxnum;
+}
+
+const mininum = (...numbers) => {
+    let minnum = numbers[0];
+    for ( let i = 0; i < numbers.length; i++){
+        if( numbers[i] < minnum){
+            minnum = numbers[i];
+        }
+    }
+    return minnum;
+}
+
+console.log(performOperation(12,43,45,23,75,34,mininum));
