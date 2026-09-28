@@ -152,5 +152,97 @@ console.log(processText("shriNidhi", processFindLength));
 
 // Excercise no 10 :
 
-let marks = [89, 58, 74, 97, 68];
-console.log(Math.max(...marks));
+function processMarks (marks, operation){
+    return operation(marks);
+}
+// the easiest method to check for the max value in a givrn array.
+let marks = [89, 58, 74, 93, 68];
+
+function highestMark (marks) {
+    return Math.max(...marks);
+} // we cannot use spread operator casually, as a variable taking the array and spreading it's values, we need to always call it inside a function or something. therefore highest = (...marks); and then console.log(Math.max(highest)); does not work.
+
+console.log(highestMark(marks));  
+
+// but the same concept can be written in logical version.
+
+let marksArr = [23, 76, 46, 21, 94, 97];
+let marksArr1 = [53, 72, 46, 91, 84, 97];
+let marksArr2 = [83, 76, 86, 71, 64, 99];
+let marksArr3 = [63, 96, 86, 61, 94, 98];
+
+
+
+function highestMarks (marksArr){
+let highest = marksArr[0];
+for ( let i = 0; i < marksArr.length; i++){
+    if(marksArr[i] > highest){
+        highest = marksArr[i];
+    }
+}
+return highest; // we are returning the highest outside the for loop because it does not update the value of highest if we return it inside the loop or even inside the "if" conditional statement.
+}
+
+// with the same concept we can perform multiple other functions.
+// for the loowest in the array.
+function lowestMarks (marksArr){
+    let lowest = marksArr[0];
+    for (let j = 0 ; j < marksArr.length ; j++){
+        if (marksArr[j] < lowest){
+            lowest = marksArr[j];
+        }
+    }
+    return lowest;
+}
+
+
+// function to get the total value.
+function totalMarks (marks){
+    let total = 0;
+    for (let i = 0; i < marks.length; i++){
+        total = total + marks[i];
+    }
+    return total;
+}
+
+
+
+// function to calculate the average
+
+function averageMarks( marks ){
+    let average = totalMarks(marks) / marks.length;
+    return average 
+};
+
+
+
+// now to get the function passed as arguments.
+
+console.log(processMarks(marksArr, highestMark));
+console.log(processMarks(marksArr, lowestMarks));
+console.log(processMarks(marksArr, totalMarks));
+console.log(processMarks(marksArr, averageMarks));
+
+
+// by using the same function we can perform operations on multiple values.
+// for example:
+console.log(processMarks(marksArr1, lowestMarks));
+console.log(processMarks(marksArr2, totalMarks));
+console.log(processMarks(marksArr3, averageMarks));
+
+
+// Excercise no 11 :
+function processNumber(number, condition, successMessage, failureMessage) {
+    if (condition(number)) {
+        return successMessage;
+    } else {
+        return failureMessage;
+    }
+}
+
+function isEven(number) {
+    return number % 2 === 0;
+}
+
+console.log(processNumber(25, isEven, "Even!", "Odd!"));
+console.log(processNumber(22, isEven, "Even!", "Odd!"));
