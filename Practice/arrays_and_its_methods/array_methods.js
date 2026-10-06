@@ -215,3 +215,6 @@
 //     isDeveloper: elem.role === "Developer"
 // }));
 // console.log(j);
+
+let number = [1, 10, 23, 43, 65];
+number.forEach(elem => console.log(elem > 30));// these conditions become useless when we want to check for specific conditions, therefore we use filter() to overcome the problem faced with forEach(). It is not that we can achieve the desired output, but filter() is much efficient than forEach() when it comes to searching through specific conditions.
