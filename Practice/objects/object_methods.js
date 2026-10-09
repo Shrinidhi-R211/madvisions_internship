@@ -216,3 +216,5 @@ let exc13BankAcc = {
 console.log(exc13BankAcc.deposit(30000));
 console.log(exc13BankAcc.withdraw(300000));
 exc13BankAcc.showBalance();
+
+console.log(exc10Counter);
