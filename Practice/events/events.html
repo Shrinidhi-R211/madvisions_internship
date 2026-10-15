@@ -1,0 +1,111 @@
+<!-- 1. What is an Event? - an event is an action or occurance that js can detect and respond to.
+    the examples include :
+        a. clicking a button.
+        b. typing into an input field.
+        c. moving the mouse over an element.
+        d. submitting a form.
+        e. pressing a keyboard key. -->
+
+
+<!-- 
+2. Event Handlers - An event handler is a function or piece of code that runs in response to a particular event.
+
+    for example if we have a button, and if someone clicks on it, then the function it is going to perform is called event handlers.
+
+    an example shall be given below :
+    
+
+    note : Defining a handler function doen't automatically execute it. We need to connect it to the event. -->
+
+
+<!-- 
+3. Connect the Handler to the Event. 
+    ex : myButton.addEventListener("click", handleClick); 
+
+    here the "handleClick" is a callback /  event handler, function that keeps running every time the event occurs. -->
+
+
+
+<!-- 
+4. Two ways to write event handlers. 
+    a. Named function -  ex : given as "revert" in the below program, and we explicitly write a function named revert.
+
+    b. Annonymous function implicitly. - ex : the function written inside the addEventListener method, directly with an Annonymous function.
+     -->
+
+     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="textMessage">The text <strong>Before</strong> clicking.</p>
+    <button id="changeBtn">Click</button>
+    <button id="revertBtn">Reset</button>
+    <br>
+
+    <p id="textLabel"></p>
+    <button id="textBtn">Add text</button>
+    <br>
+
+
+    <!-- Event Objects Code -->
+    <input type="text" id="taskInput" placeholder="Enter a task.">
+    <p id="output"></p>
+
+<script>
+
+    const message = document.getElementById("textMessage");
+
+    const btn = document.getElementById("changeBtn");
+
+    const rBtn = document.getElementById("revertBtn");
+
+    btn.addEventListener("click", function(){
+       message.innerHTML = "The text <strong>After</strong> clicking."
+    })
+
+    function revert () {
+        message.innerHTML = "The text <strong>Before</strong> clicking."
+    }
+    rBtn.addEventListener("click", revert); 
+    // No invoking of the function is required when calling the function inside the event handler.
+
+    document.getElementById("textBtn").addEventListener("click", () => {
+        document.getElementById("textLabel").textContent = "A";
+    })
+
+    document.getElementById("textBtn").addEventListener("click", () => {
+        document.getElementById("textLabel").textContent = "B, check console to see the actual change.";
+    })
+
+// NOTE to Remember :
+//      difference between console and text assignment. The text assignment replaces the value, where as the console.log(object); statement helps to print both the values in the console section. 
+
+
+    document.getElementById("textBtn").addEventListener("click", () => {
+        console.log("A");
+    });
+
+        document.getElementById("textBtn").addEventListener("click", () => {
+        console.log("B");
+    });
+
+
+    // Event Objects learning.
+    const taskInput = document.getElementById("taskInput");
+    const output = document.getElementById("output");
+
+    taskInput.addEventListener("input", (event) => {
+        output.textContent = event.target.value;
+    });
+
+
+</script>
+
+</body>
+</html>
