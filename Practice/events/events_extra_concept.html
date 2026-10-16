@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="taskForm">
+        <label for="username">Your Name : </label>
+        <input id="username" type="text" placeholder="Enter Your Name : ">
+
+        <p id="liveOutput">Live Preview : </p>
+        <p id="changeOutput">Change Event :</p>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+         const taskForm = document.getElementById("taskForm");
+
+         const live = document.getElementById("liveOutput");
+
+         const change = document.getElementById("changeOutput");
+
+         const username = document.getElementById("username");
+
+
+// to prevent default subbmission.
+        taskForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+        });
+
+// code to listen to input preview.
+        username.addEventListener("input", (event) => {
+            live.textContent = "Live Preview: " + event.target.value;
+        });
+
+// code to listen to change events, this does not require me to submit to see the changes. It happens once after the focus is moved away from the input field.
+        username.addEventListener("change", (event) => {
+            change.textContent = "Change Event : " + event.target.value;
+        });
+
+// focus event :
+        username.addEventListener("focus", () => {
+            live.textContent = "You are ready to check the live preview, type something in the input field."
+        });
+
+
+// blur event:
+username.addEventListener("blur", () => {
+    live.textContent = "Input lost focus!";
+});
+    </script>
+</body>
+</html>
