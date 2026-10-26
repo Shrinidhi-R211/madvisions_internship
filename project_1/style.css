@@ -1,0 +1,38 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    margin: 0;
+    padding: 30px;
+}
+
+#taskContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.task-card {
+    background-color: white;
+    border: 1px solid #d8e3f2;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.task-card p {
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.task-card span {
+    font-size: 14px;
+    color: #475569;
+}
+#fetchBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: rgb(182, 182, 182);
+    color: rgb(0, 0, 0);
+}
