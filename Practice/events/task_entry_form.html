@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form id="taskForm">
+  <label for="taskName">Task name</label>
+  <input id="taskName" type="text" placeholder="Enter a task">
+
+  <p>Priority</p>
+  <label>
+    <input type="radio" name="priority" value="low">
+    Low
+  </label>
+
+  <label>
+    <input type="radio" name="priority" value="high">
+    High
+  </label>
+
+  <p>
+    <label for="category">Category</label>
+    <select id="category">
+      <option value="study">Study</option>
+      <option value="work">Work</option>
+      <option value="personal">Personal</option>
+    </select>
+  </p>
+
+  <label for="deadline">Deadline</label>
+  <input id="deadline" type="date">
+
+  <p>
+    <label>
+      <input id="isImportant" type="checkbox">
+      Mark as important
+    </label>
+  </p>
+
+  <button type="submit">Add task</button>
+</form>
+
+<p id="message"></p>
+
+<h2>Added Tasks</h2>
+<ul id="taskList"></ul>
+
+<script src="task_entry_form.js"></script>
+</body>
+</html>
