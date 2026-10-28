@@ -16,6 +16,16 @@
         <button type="submit">Submit</button>
     </form>
 
+
+    <!-- Mouse Events -->
+    <!-- 1. click and double click event. -->
+    <button id="myBtn1">CLick Once</button>
+
+    <!-- 2. Mouse-over and mouse-out event. -->
+     <button id="myBtn2">
+        Mouse Hover Event
+     </button>
+
     <script>
 
          const taskForm = document.getElementById("taskForm");
@@ -32,12 +42,15 @@
             event.preventDefault();
         });
 
-// code to listen to input preview.
+// input : 
+
         username.addEventListener("input", (event) => {
             live.textContent = "Live Preview: " + event.target.value;
         });
 
-// code to listen to change events, this does not require me to submit to see the changes. It happens once after the focus is moved away from the input field.
+// "change" events :
+
+// this does not require me to submit to see the changes. It happens once after the focus is moved away from the input field.
         username.addEventListener("change", (event) => {
             change.textContent = "Change Event : " + event.target.value;
         });
@@ -52,6 +65,38 @@
 username.addEventListener("blur", () => {
     live.textContent = "Input lost focus!";
 });
+
+// mouse events.
+// 1. mouse click and double click event.
+    const myBtn1 = document.getElementById("myBtn1");
+
+    // Note : The event dblclick, triggers even the click, therefore whenever there is a double click taking place, all those times the click also works for two times.  
+
+    // NOTE IN SHORT ===> a double-click generally triggers two click events followed by one dblclick event.
+
+    myBtn1.addEventListener("click", () =>{
+        console.log("Hello");
+    });
+
+    myBtn1.addEventListener("dblclick", () => {
+        console.log("World");
+    });
+
+// 2. mouse hover (mouse-over and mouse-out event.)
+
+    const myBtn2 = document.getElementById("myBtn2");
+
+    // NOTE : 1. mouse-over is the event that triggers when the mouse is hovered over the elements. 
+    // NOTE : 2. mouse-out is the event that triggers when the mouse is hovered away from the element.
+
+    myBtn2.addEventListener("mouseover", () => {
+        myBtn2.textContent = "Move away from me."
+    });
+
+    myBtn2.addEventListener("mouseout", () => {
+        myBtn2.textContent = "please hover over me."
+    });
+
     </script>
 </body>
 </html>
