@@ -1,0 +1,237 @@
+/* =========================================
+   BASE OVERVIEW CARD
+========================================= */
+
+.overview-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  flex: 1;
+  min-width: 0;
+  padding: 24px 18px;
+
+  border: 1.5px solid;
+  border-radius: 14px;
+
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    filter 0.25s ease;
+}
+
+.overview-card h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.overview-card p {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* =========================================
+   TOTAL TASKS - BLUE
+========================================= */
+
+.total-card {
+  background: #e0ecfc;
+  border-color: #3b82f6;
+}
+
+.total-card h3 {
+  color: #1e40af;
+}
+
+.total-card p {
+  color: #2563eb;
+}
+
+.app-shell[data-theme="dark"] .total-card {
+  background: #364d71;
+  border-color: #60a5fa;
+}
+
+.app-shell[data-theme="dark"] .total-card h3 {
+  color: #bfdbfe;
+}
+
+.app-shell[data-theme="dark"] .total-card p {
+  color: #60a5fa;
+}
+
+/* =========================================
+   COMPLETED TASKS - GREEN
+========================================= */
+
+.completed-card {
+  background: #f0fdf4;
+  border-color: #22c55e;
+}
+
+.completed-card h3 {
+  color: #166534;
+}
+
+.completed-card p {
+  color: #16a34a;
+}
+
+.app-shell[data-theme="dark"] .completed-card {
+  background: #316344;
+  border-color: #4ade80;
+}
+
+.app-shell[data-theme="dark"] .completed-card h3 {
+  color: #bbf7d0;
+}
+
+.app-shell[data-theme="dark"] .completed-card p {
+  color: #4ade80;
+}
+
+/* =========================================
+   PENDING TASKS - ORANGE
+========================================= */
+
+.pending-card {
+  background: #fff7ed;
+  border-color: #f97316;
+}
+
+.pending-card h3 {
+  color: #9a3412;
+}
+
+.pending-card p {
+  color: #ea580c;
+}
+
+.app-shell[data-theme="dark"] .pending-card {
+  background: #764d2f;
+  border-color: #fb923c;
+}
+
+.app-shell[data-theme="dark"] .pending-card h3 {
+  color: #fed7aa;
+}
+
+.app-shell[data-theme="dark"] .pending-card p {
+  color: #fb923c;
+}
+
+/* =========================================
+   HOVER EFFECTS
+========================================= */
+
+.overview-card:hover {
+  transform: translateY(-3px);
+}
+
+.total-card:hover {
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.2);
+}
+
+.completed-card:hover {
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.2);
+}
+
+.pending-card:hover {
+  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.2);
+}
+
+/* =========================================
+   ACTIVE FILTER CARD
+========================================= */
+
+.overview-card.active {
+  transform: translateY(-4px) scale(1.025);
+  border-width: 2.5px;
+}
+
+.total-card.active {
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.18),
+    0 8px 22px rgba(59, 130, 246, 0.2);
+}
+
+.completed-card.active {
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.18),
+    0 8px 22px rgba(34, 197, 94, 0.22);
+}
+
+.pending-card.active {
+  box-shadow:
+    0 0 0 3px rgba(249, 115, 22, 0.18),
+    0 8px 22px rgba(249, 115, 22, 0.22);
+}
+
+/* Keyboard focus */
+
+.overview-card:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+  .overview-card {
+    padding: 18px 12px;
+  }
+
+  .overview-card h3 {
+    font-size: 12px;
+  }
+
+  .overview-card p {
+    font-size: 25px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .overview-card {
+    transition: none;
+  }
+}
+
+
+@keyframes overview-card-focus {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-6px) scale(1.04);
+  }
+
+  100% {
+    transform: translateY(-4px) scale(1.025);
+  }
+}
+
+.overview-card.active {
+  animation: overview-card-focus 0.45s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overview-card.active {
+    animation: none;
+  }
+}

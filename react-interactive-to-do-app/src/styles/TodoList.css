@@ -1,0 +1,279 @@
+
+/* ==============================
+   TODO LIST CONTAINER
+================================= */
+
+.todo-list-container {
+  width: 100%;
+}
+
+.todo-list-heading {
+  margin: 0 0 22px;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+
+/* ==============================
+   TASK INSTRUCTIONS
+================================= */
+
+.todo-list-container-para {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding: 16px 20px;
+  margin-bottom: 16px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.todo-list-container-para p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.todo-list-container-para p:first-child {
+  color: var(--secondary-text);
+  font-size: 0.78rem;
+  
+}
+
+.todo-list-label-para p:last-child {
+ color: var(--text-color);
+ font-weight: 600;
+}
+
+
+/* ==============================
+   TASKS AND ACTIONS LABELS
+================================= */
+
+.todo-list-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 12px 20px;
+  margin-bottom: 14px;
+
+  color: var(--secondary-text);
+  background: var(--surface-color);
+
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Tasks label */
+
+.todo-list-labels span:first-child {
+  color: var(--accent-color);
+
+  padding: 7px 13px;
+
+  background: rgba(37, 99, 235, 0.10);
+  border-radius: 8px;
+}
+
+/* Actions label */
+
+.todo-list-labels span:last-child {
+  color: var(--accent-color);
+
+  padding: 7px 13px;
+
+  background: rgba(37, 99, 235, 0.10);
+  border-radius: 8px;
+
+  white-space: nowrap;
+}
+
+
+/* ==============================
+   TASK LIST
+================================= */
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+
+/* ==============================
+   EMPTY TASK MESSAGE
+================================= */
+
+.empty-task-message {
+  padding: 24px;
+
+  text-align: center;
+  color: var(--secondary-text);
+
+  background: var(--surface-color);
+  border: 1px dashed var(--border-color);
+  border-radius: 14px;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 480px) {
+  .todo-list-heading {
+    font-size: 1.3rem;
+  }
+
+  .todo-list-label-para {
+    padding: 12px 14px;
+  }
+
+  .todo-list-label-para p {
+    font-size: 0.78rem;
+  }
+
+  .todo-list-label-para p:last-child {
+    font-size: 0.72rem;
+  }
+
+  .todo-list-labels {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .todo-list-labels span:first-child {
+    padding: 6px 9px;
+    font-size: 0.7rem;
+  }
+
+  .todo-list-labels span:last-child {
+    padding: 6px 9px;
+    font-size: 0.7rem;
+  }
+}
+
+
+
+/* ==============================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .todo-list,
+  .todo-list-container {
+    scroll-behavior: auto;
+  }
+}
+
+
+/* ==============================
+   TASK FILTERS
+================================= */
+
+.todo-filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  padding: 16px 20px;
+  margin-bottom: 18px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.todo-filter-heading {
+  color: var(--text-color);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.todo-filter-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.todo-filter-btn {
+  padding: 9px 16px;
+
+  color: var(--secondary-text);
+  background: transparent;
+
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.todo-filter-btn:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.todo-filter-btn.active {
+  color: #ffffff;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.todo-filter-btn:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+
+/* ==============================
+   RESPONSIVE FILTERS
+================================= */
+
+@media (max-width: 480px) {
+  .todo-filter-container {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px;
+  }
+
+  .todo-filter-buttons {
+    width: 100%;
+  }
+
+  .todo-filter-btn {
+    flex: 1;
+    padding: 9px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+
+/* ==============================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .todo-filter-btn {
+    transition: none;
+  }
+}

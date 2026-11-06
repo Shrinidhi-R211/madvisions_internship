@@ -1,0 +1,277 @@
+
+/* ==============================
+   MODAL OVERLAY
+================================= */
+
+.edit-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+
+  animation: editOverlayFade 0.25s ease;
+}
+
+
+/* ==============================
+   MODAL CONTAINER
+================================= */
+
+.edit-modal {
+  width: 100%;
+  max-width: 460px;
+
+  padding: 28px;
+
+  background: var(--surface-color);
+  color: var(--text-color);
+
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+
+  animation: editModalAppear 0.3s ease;
+}
+
+
+/* ==============================
+   MODAL HEADER
+================================= */
+
+.edit-modal-header {
+  margin-bottom: 25px;
+}
+
+.edit-modal-header h2 {
+  margin: 0 0 8px;
+
+  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.edit-modal-header p {
+  margin: 0;
+
+  color: var(--secondary-text);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+
+/* ==============================
+   INPUT FIELD
+================================= */
+
+.edit-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.edit-modal-field label {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.edit-modal-field input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 13px 15px;
+
+  color: var(--text-color);
+  background: var(--surface-color);
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.edit-modal-field input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.edit-modal-field input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+
+/* ==============================
+   VALIDATION MESSAGE
+================================= */
+
+.edit-modal-error {
+  margin: 0;
+
+  color: #dc2626;
+  font-size: 0.8rem;
+}
+
+
+/* ==============================
+   MODAL ACTION BUTTONS
+================================= */
+
+.edit-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+.edit-modal-actions button {
+  padding: 11px 18px;
+
+  border: none;
+  border-radius: 9px;
+
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease,
+              background-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.edit-modal-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.edit-modal-actions button:active {
+  transform: scale(0.97);
+}
+
+.edit-modal-actions button:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+
+/* Cancel button */
+
+.edit-cancel-btn {
+  color: var(--text-color);
+  background: var(--border-color);
+}
+
+.edit-cancel-btn:hover {
+  filter: brightness(0.95);
+}
+
+
+/* Save button */
+
+.edit-save-btn {
+  color: #ffffff;
+  background: var(--accent-color);
+}
+
+.edit-save-btn:hover {
+  filter: brightness(1.1);
+}
+
+
+/* ==============================
+   DARK THEME
+================================= */
+
+.app-shell[data-theme="dark"] .edit-modal {
+  background: #1e293b;
+  border-color: #40516b;
+}
+
+.app-shell[data-theme="dark"] .edit-modal-field input {
+  background: #26364f;
+  border-color: #40516b;
+}
+
+
+/* ==============================
+   ANIMATIONS
+================================= */
+
+@keyframes editOverlayFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes editModalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 480px) {
+  .edit-modal {
+    padding: 22px;
+  }
+
+  .edit-modal-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .edit-modal-actions {
+    gap: 9px;
+  }
+
+  .edit-modal-actions button {
+    padding: 10px 13px;
+    font-size: 0.78rem;
+  }
+}
+
+
+/* ==============================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .edit-modal-overlay,
+  .edit-modal {
+    animation: none;
+  }
+
+  .edit-modal-actions button,
+  .edit-modal-field input {
+    transition: none;
+  }
+}

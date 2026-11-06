@@ -1,0 +1,260 @@
+/* =========================================
+   BASE TASK CARD
+========================================= */
+
+.todo-item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px 20px;
+  margin-bottom: 14px;
+
+  border: 1px solid transparent;
+  border-radius: 14px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.25s ease;
+}
+
+/* =========================================
+   COMPLETED TASK - GREEN GRADIENT
+========================================= */
+
+.todo-item.completed-task {
+  background: linear-gradient(
+    115deg,
+    #e9edea,
+    #bef8d1,
+    #aafbd5
+  );
+
+  border-color: #86efac;
+}
+
+.todo-item.completed-task .todo-title {
+  color: #14532d;
+}
+
+/* =========================================
+   PENDING TASK - ORANGE GRADIENT
+========================================= */
+
+.todo-item.pending-task {
+  background: linear-gradient(
+    115deg,
+    #ffedd5,
+    #fed7aa,
+    #fbf8f4
+  );
+
+  border-color: #fdba74;
+}
+
+.todo-item.pending-task .todo-title {
+  color: #7c2d12;
+}
+/* =========================================
+   DARK THEME - 
+========================================= */
+
+.app-shell[data-theme="dark"] .todo-item {
+  background: linear-gradient(145deg, #2d5fb0,   #0a123e);
+  border-color: #40516b;
+}
+
+.app-shell[data-theme="dark"] .todo-item .todo-title {
+  color: #ffffff;
+}
+
+.app-shell[data-theme="dark"] .todo-item:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================
+   TASK CARD HOVER
+========================================= */
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.todo-item.completed-task:hover {
+  border-color: #22c55e;
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.18);
+}
+
+.todo-item.pending-task:hover {
+  border-color: #f97316;
+  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.18);
+}
+
+.app-shell[data-theme="dark"] .todo-item:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.todo-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-checkbox input {
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+  accent-color: var(--accent-color);
+}
+
+/* =========================================
+   TASK TITLE
+========================================= */
+
+.todo-title {
+  margin: 0;
+  min-width: 0;
+
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   ACTION BUTTON CONTAINER
+========================================= */
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+/* =========================================
+   COMMON ACTION BUTTON
+========================================= */
+
+.todo-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  font-size: 15px;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.todo-action-btn:hover:not(:disabled) {
+  transform: scale(0.92);
+}
+
+.todo-action-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* =========================================
+   SAVE BUTTON
+========================================= */
+
+.save-btn {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+}
+
+.save-btn:hover {
+  background: rgba(16, 185, 129, 0.22);
+}
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.delete-btn {
+  background: rgba(220, 38, 38, 0.10);
+  color: #dc2626;
+}
+
+.delete-btn:hover {
+  background: rgba(220, 38, 38, 0.20);
+}
+
+/* =========================================
+   EDIT BUTTON
+========================================= */
+
+.edit-btn {
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+}
+
+.edit-btn:hover:not(:disabled) {
+  background: rgba(37, 99, 235, 0.22);
+}
+
+/* =========================================
+   BUTTON STATES
+========================================= */
+
+.todo-action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.todo-action-btn:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT
+========================================= */
+
+@media (max-width: 520px) {
+  .todo-item {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .todo-actions {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+
+  .todo-action-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .todo-item,
+  .todo-action-btn {
+    transition: none;
+  }
+}

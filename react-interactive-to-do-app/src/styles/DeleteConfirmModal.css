@@ -1,0 +1,240 @@
+
+/* =================================
+   MODAL OVERLAY
+================================= */
+
+.delete-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.72);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    animation: modalFadeIn 0.5s ease-out both;
+}
+
+
+/* =================================
+   MAIN MODAL
+================================= */
+
+.delete-modal {
+    width: 100%;
+    max-width: 440px;
+
+    padding: 32px;
+
+    background: var(--surface-color);
+    color: var(--text-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.04);
+
+    text-align: center;
+
+    animation: modalAppear 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+
+/* Dark theme enhancement */
+
+.app-shell[data-theme="dark"] .delete-modal {
+    background: linear-gradient(
+        145deg,
+        #26364f,
+        #17243a
+    );
+
+    border: 1px solid #405575;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55),
+        0 0 25px rgba(96, 165, 250, 0.08);
+}
+
+
+/* =================================
+   MODAL TEXT
+================================= */
+
+.delete-modal h2 {
+    margin: 0 0 14px;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.delete-modal p {
+    margin: 0 0 28px;
+
+    color: var(--secondary-text);
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.delete-modal strong {
+    color: var(--text-color);
+    overflow-wrap: anywhere;
+}
+
+
+/* =================================
+   ACTION BUTTONS
+================================= */
+
+.delete-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.delete-modal-actions button {
+    flex: 1;
+
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Cancel button */
+
+.delete-modal-actions button:first-child {
+    background: var(--bg-color);
+    color: var(--text-color);
+
+    border: 1px solid var(--border-color);
+}
+
+.delete-modal-actions button:first-child:hover {
+    background: var(--border-color);
+    transform: translateY(-2px);
+}
+
+
+/* Delete button */
+
+.delete-modal-actions button:last-child {
+    background: #dc2626;
+    color: white;
+
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+}
+
+.delete-modal-actions button:last-child:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px rgba(220, 38, 38, 0.3);
+}
+
+
+/* Click feedback */
+
+.delete-modal-actions button:active {
+    transform: scale(0.97);
+}
+
+
+/* Keyboard focus */
+
+.delete-modal-actions button:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.85);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =================================
+   MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 480px) {
+    .delete-modal {
+        padding: 25px 20px;
+    }
+
+    .delete-modal h2 {
+        font-size: 1.3rem;
+    }
+
+    .delete-modal-actions {
+        flex-direction: column-reverse;
+    }
+}
+
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .delete-modal-overlay,
+    .delete-modal {
+        animation: none;
+    }
+
+    .delete-modal-actions button {
+        transition: none;
+    }
+}
+
+
+
